@@ -1,0 +1,50 @@
+//python
+
+import heapq
+
+def dijkstra(n, edges, src):
+    graph = [[] for _ in range(n)]
+    for u, v, w in edges:
+        graph[u].append((v, w))
+
+    dist = [float('inf')] * n
+    dist[src] = 0
+    heap = [(0, src)]
+
+    while heap:
+        d, u = heapq.heappop(heap)
+        for v, w in graph[u]:
+            if dist[v] > d + w:
+                dist[v] = d + w
+                heapq.heappush(heap, (dist[v], v))
+
+    return dist
+
+
+
+// java code
+int[] dijkstra(int n, int[][] edges, int src) {
+    List<int[]>[] graph = new ArrayList[n];
+    for (int i = 0; i < n; i++) graph[i] = new ArrayList<>();
+    for (int[] e : edges) graph[e[0]].add(new int[]{e[1], e[2]});
+
+    int[] dist = new int[n];
+    Arrays.fill(dist, Integer.MAX_VALUE);
+    dist[src] = 0;
+
+    PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+    pq.offer(new int[]{src, 0});
+
+    while (!pq.isEmpty()) {
+        int[] cur = pq.poll();
+        int u = cur[0], d = cur[1];
+        for (int[] edge : graph[u]) {
+            int v = edge[0], w = edge[1];
+            if (dist[v] > d + w) {
+                dist[v] = d + w;
+                pq.offer(new int[]{v, dist[v]});
+            }
+        }
+    }
+    return dist;
+}

@@ -1,0 +1,27 @@
+1. BFS (Breadth-First Search)
+  When:
+  
+    Find shortest path in unweighted graphs
+    
+    Level-order traversal
+    
+    Finding minimum moves (e.g., word ladder, number transformations)
+    
+    Graphs with few levels (shallow depth)
+  
+  Why:
+  
+    Guarantees shortest path by exploring all neighbors first
+    
+    Time: O(V + E)
+  
+  Examples:
+  
+    Minimum steps to convert word A to B
+    
+    Minimum jumps to reach end
+    
+    Maze shortest path (unweighted grid)
+    
+    Checking bipartiteness
+  

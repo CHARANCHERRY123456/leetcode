@@ -1,0 +1,5 @@
+GRPAHS : 
+  1) some times nodes are not directly given you have to identify nodes and edges by yourself
+    -> first think of transitions you must have to see transitions if you can't see then it must tend to a non graph problem
+    -> if tranistion then you can easily find the nodes based on transitions
+    -> after idenitfying nodes and transitions some times you can build graph or sometimes without building graph also you can get adkjaceny list from transitions

@@ -24,4 +24,37 @@
     Maze shortest path (unweighted grid)
     
     Checking bipartiteness
+
+2. DFS (Depth-First Search)
+  When:
+      
+      Topological sorting
+      
+      Detecting cycles
+      
+      Connected components
+      
+      Tree traversals
+      
+      Backtracking (e.g., Sudoku, permutations)
+      
+      Path existence checking
   
+  Why:
+      
+      Deep exploration helps with recursion-style problems
+      
+      Stack/recursion based
+  
+  Examples:
+  
+      Subset generation
+      
+      Detect cycle in directed/undirected graph
+      
+      Number of islands (grid)
+      
+      Articulation points, bridges
+      
+  
+    

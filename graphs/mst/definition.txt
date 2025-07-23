@@ -12,3 +12,15 @@ Minimum Spanning Tree :
     among all possible spanning tree the trees with min cost is considered
     mst. and there can be many msts
 
+How to find MST of a graph : 
+
+1) Krushkal : (greedy , DUS)
+        - sort all edges and add one by one also check adding edges can't form the cycle in st
+        - implmented with Disjoint union set
+        
+2) Prims : (greedy , heap)
+        - greedy with heap and arr or any ds to store the mst
+        - consider any one vertex at the beginig in the mst
+        - add the vertices so that it should be less weight 
+            and it should form a edge with existing vertex and non existing(new) vertex
+        - this process continued until all vertices are added

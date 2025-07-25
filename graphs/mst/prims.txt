@@ -1,0 +1,48 @@
+Prims algorithm :
+    to find the min spanning tree 
+
+intution : start with a single node then keep adding the nodes until all nodes are added .
+           but idea is adding the node so that it can have least possible weight with the any visited node among all other nodes
+
+
+GFG MST problem with prims
+
+python code : 
+
+def spanningTree(self, V: int, adj: List[List[int]]) -> int:
+        heap = [(0,0)]
+        visited = set()
+        ans = 0
+        while heap:
+            wt ,node= heappop(heap)
+            if node in visited:continue
+            visited.add(node)
+            ans += wt
+            for nen , new in adj[node]:
+                if nen not in visited:
+                    heappush(heap , (new,nen))
+        return ans
+
+java code : 
+
+static int spanningTree(int V, int E, List<List<int[]>> adj) {
+        // dist,node
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->a[0]-b[0]);
+        pq.offer(new int[]{0,0});
+        HashSet<Integer> visited = new HashSet();
+        int ans = 0;
+        while(!pq.isEmpty()){
+            // dist , node
+            int[] cur = pq.poll();
+            int wt = cur[0] , node = cur[1];
+            if(visited.contains(node)) continue;
+            visited.add(node);
+            ans += wt;
+            for(int[] nei :adj.get(cur[1])){
+                int nein = nei[0] , neiw = nei[1];
+                if(!visited.contains(nein))
+                pq.offer(new int[]{neiw,nein});
+            }
+        }
+        return ans;
+    }

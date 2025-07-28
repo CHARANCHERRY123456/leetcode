@@ -1,0 +1,38 @@
+sort edges and add them one by one but make sure no cycle is formed
+
+
+
+from typing import List
+class UF:
+    def __init__(self , n):
+        self.parents = list(range(n))
+        self.ranks = [0] * n
+    def find(self,node):
+        if self.parents[node] != node:
+            self.parents[node] = self.find(self.parents[node])
+        return self.parents[node]
+    def union(self,n1,n2):
+        p1 = self.find(n1)
+        p2 = self.find(n2)
+        if p1 == p2:return False
+        r1 , r2 = self.ranks[p1] , self.ranks[p2]
+        if r1 > r2:
+            self.parents[p2] = p1
+        elif r1 < r2:
+            self.parents[p1] = p2
+        else:
+            self.parents[p1] = p2
+            self.ranks[p2] += 1
+        return True
+        
+class Solution:
+    def kruskalsMST(self, V: int, edges: List[List[int]]) -> int:
+        edges.sort(key=lambda x : x[2])
+        min_cost = 0
+        uf = UF(V)
+        ans = 0
+        for u,v,w in edges:
+            if uf.union(u,v):
+                ans += w
+        return ans
+        

@@ -1,0 +1,2 @@
+when we need to union u,v but some conflicts happen in there you have to make the u,v+100000
+so that all u's falll in one set all v's fall in other set

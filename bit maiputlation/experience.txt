@@ -1,0 +1,2 @@
+*) when doing bit mainpulation you have to think the problem to perform on each bit individually more formally try to use time complexity of O(32 * n) 
+*) OR Operation is irreversible 

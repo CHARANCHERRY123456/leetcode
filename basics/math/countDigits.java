@@ -1,3 +1,4 @@
+package math;
 class Solution {
     static int evenlyDivides(int n) {
         int temp = n;

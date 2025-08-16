@@ -1,3 +1,4 @@
+package math;
 import java.util.Stack;
 class Solution {
     public static void print_divisors(int n) {

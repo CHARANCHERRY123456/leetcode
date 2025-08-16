@@ -1,3 +1,4 @@
+package math;
 class Solution {
     static boolean armstrongNumber(int n) {
         int temp = n;

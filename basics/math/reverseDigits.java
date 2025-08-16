@@ -1,3 +1,4 @@
+package math;
 class Solution {
     public int reverse(int x) {
         boolean isNeg = false;

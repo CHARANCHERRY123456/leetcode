@@ -1,3 +1,4 @@
+package math;
 class Solution {
     static boolean isPrime(int n) {
         if(n<2) return false;
